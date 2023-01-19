@@ -1,0 +1,72 @@
+.slider {
+   border: 1px solid #000;
+   border-radius: 15px;
+   margin: 50px 0;
+   text-align: center;
+
+   &__list {
+      border-radius: 15px;
+      background: #e3df76;
+      padding: 50px 0;
+      height: 300px;
+   }
+   
+   /* Navigation */
+   // &__navigation {
+   //    /* height: 116px; */
+
+   //    display: flex;
+   //    align-items: center;
+   //    justify-content: space-between;
+   //    position: absolute;
+   //    bottom: 0;
+   //    left: 0;
+   //    background: #333;
+   //    padding: 31px 25px 31px 44px;
+   // }
+}
+
+
+/* arrow */
+// .slick-prev-slide,
+// .slick-next-slide {
+//    background: transparent;
+//    outline: none;
+//    border: none;
+//    margin-top: 5px;
+//    transition: all .3s ease;
+// }
+// .slick-prev-slide:hover path,
+// .slick-next-slide:hover path{
+//    fill: #fff;
+// }
+// .slick-prev-slide:hover,
+// .slick-next-slide:hover {
+//    cursor: pointer;
+// }
+// .slick-prev-slide{
+//    margin-right: 20px;
+// }
+
+/* dots */
+// .slider__dots {
+//    display: flex;
+//    align-items: end;
+//    justify-content: space-between;
+// }
+// .slider__dots .slick-dots {
+//    position: static;
+//    width: auto;
+//    margin: 0 50px;
+// }
+// .slider__dots .slick-dots li{
+//    list-style: none;
+//    margin: 0 10px;
+// }
+// .slider__dots .slick-dots button::before{
+//    width: 10px;
+//    height: 10px;
+//    background: #fff;
+//    border-radius: 100%;
+//    content: '';
+// }

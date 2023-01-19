@@ -1,0 +1,24 @@
+.block {
+   margin: 50px 0;
+   // .block__list
+   &__list {
+      border-radius: 15px;
+      border: 1px solid #000;
+      padding: 20px 0;
+
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      @media  (max-width: $breakpoint768) {
+         flex-wrap: wrap;
+      }
+   }
+
+   // .block__item
+   &__item {
+      flex: 1 1 50%;
+   }
+   .block__item img {
+      max-width: 100%;
+   }
+}

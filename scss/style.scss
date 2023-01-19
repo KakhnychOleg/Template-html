@@ -1,0 +1,26 @@
+// Default
+@import "_reset.scss";
+@import "_var.scss";
+@import "_accordion.scss";
+@import "_slider.scss";
+@import "_popup.scss";
+
+//Block global
+@import "_header.scss";
+@import "_footer.scss";
+
+//Block 
+@import "_block.scss";
+
+
+.container {
+   max-width: $containerWidth;
+   margin: 0 auto;
+   padding: 0 20px;
+
+   font-family: 'Roboto', sans-serif;
+}
+
+.lock {
+   overflow-y: hidden;
+}

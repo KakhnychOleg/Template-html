@@ -1,0 +1,129 @@
+.accord__item {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   margin: 80px 0;
+}
+
+.accordion {
+   width: 100%;
+
+   &__item {
+      margin-bottom: 12px;
+      border: 1px solid #606060;
+      border-radius: 15px;
+      
+      transition: all .3s ease-in;
+
+      &:hover .accordion__title{
+         color: gray;
+      }
+   }
+
+   &__num {
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 34px;
+   
+      color: #000;
+      margin-right: 72px;
+   }
+   
+   &__title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 34px;
+      display: flex;
+      
+      color: #000;
+      padding: 20px 40px 20px 0;
+   
+      position: relative;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+
+      &::after,
+      &::before {
+         content: ' ';
+         width: 14px;
+         height: 1px;
+         background: #000;
+         position: absolute;
+         top: 50%;
+         transition: all .3s ease;
+      }
+      
+      &::before {
+         transform: rotate(45deg);
+         right: 28px;
+      }
+      &::after {
+         transform: rotate(-45deg);
+         right: 18px;
+      }
+   }
+
+   &__text {
+      display: none;
+      padding: 16px 19px 16px 100px;
+      background: transparent;
+         
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #000;
+
+      .accordion__text p{
+         margin-bottom: 18px;
+      }
+   }
+
+   .accordion__title.active {
+      background: transparent;
+   }
+
+   .accordion__title.active::before {
+      transform: rotate(-45deg);
+      right: 28px;
+   }
+   .accordion__title.active::after {
+      transform: rotate(45deg);
+      right: 18px;
+   }
+   .accordion__title.active::before,
+   .accordion__title.active::after {
+      background: #000;
+   }
+   .accordion__title::after {
+      right: 18px;
+   }
+}
+
+.active {
+   color: #B09355;
+   background: transparent;
+}
+
+@media screen and (max-width: 1260px){  
+   .services-section {
+      padding: 94px 0;
+   }    
+   .services {
+      flex-wrap: wrap;
+   }
+}
+@media screen and (max-width: 1024px){  
+   .accord__item {
+      margin: 50px 0;
+   }
+}
+@media screen and (max-width: 768px){  
+   .accordion__title {
+      padding: 30px 40px 30px 0;
+   }
+}
+@media screen and (max-width: 480px){  
+   .accordion__title {
+      font-size: 1rem;
+   }
+}
