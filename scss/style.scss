@@ -24,6 +24,6 @@
    overflow: clip;
 }
 
-.lock {
-   overflow-y: hidden;
+body.lock {
+   overflow: hidden;
 }
