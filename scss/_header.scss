@@ -1,137 +1,199 @@
+// -----------------------
+[class*="header__container"] {
+   max-width: 1080px;
+   margin: 0 auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+// -----------------------
 .header {
-   background: #c2c2c2;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 50;
    border-bottom: 1px solid #000;
-}
-.navbar {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   height: 72px;
-   // background: #999;
+   background: #c2c2c2;
 
-   .logo {
-      font-weight: bold;
-      font-size: 20px;
-   }
-   
-   .menu {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      font-size: 14px;
-      // .menu__item
-      &__item {
-         &:last-child {
-            background: $blue;
-            border-radius: 4px;
-            padding: 13px 20px;
-            &:hover {
-               background: $blueDark;
-               transition: all .3s ease;
-            }
-            a {
-               color: #fff;
-            }
-         }
-      }
-      // .menu__item-link
-      &__item-link {
-         display: flex;
-         align-items: center;
-         gap: 8px;
-         color: $grayLight;
-         &:hover {
-            color: $blue;
-            transition: all .3s ease;
-            path {
-               fill: $blue;
-               transition: all .3s ease;
-            }
-         }
-      }
-      &__burger {
-         display: none;
-
-         @media (max-width: $breakpoint768) {
-            display: block;
-            position: relative;
-            top: 0;
-            right: 0;
-            width: 30px;
-            height: 20px;
-            z-index: 3;
-
-            &::after,
-            &::before,
-            & span {
-               position: absolute;
-               content: ' ';
-               width: 30px;
-               height: 2px;
-               background: #000;
-               left: 0;
-               transition: all .3s ease;
-            }
-            &::after {
-               bottom: 0;
-            }
-            &::before {
-               top: 0;
-            }
-            & span {
-               top: 9px;
-            }
-
-            &.active::before {
-               transform: rotate(45deg);
-               top: 9px;
-            }
-            &.active::after {
-               transform: rotate(-45deg);
-               top: 9px;
-            }
-            &.active span {
-               transform: scale(0);
-            }
-         }
-      }
-   }   
-}
-@media (max-width: $breakpoint768) {
-
-   
-   .navbar {
-      // display: block;
-      align-items: baseline;
-      // position: fixed;
-      position: relative;
+   &::before {
+      content: "";
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 70px;
+      border-bottom: 1px solid #000;
+      background: #c2c2c2;
       z-index: 2;
-      padding: 20px 0 0 0;
-      // background: #fff;
-      
-      .menu {
-         // position: absolute;
+   }
+
+   // .header__container
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      min-height: 70px;
+   }
+
+   @media (max-width: $breakpoint768) {
+      .header__container {
+         padding: 0 15px;
+      }
+   }
+
+   // .header__logo
+   &__logo {
+      font-weight: 700;
+      font-size: 24px;
+      color: aqua;
+
+      position: relative;
+      z-index: 5;
+   }
+
+   // .header__menu
+   &__menu {
+   }
+}
+.menu {
+   // .menu__body
+   &__body {
+      position: relative;
+      z-index: 5;
+   }
+   @media (max-width: $breakpoint768) {
+      .menu__body {
          position: fixed;
          width: 100%;
          height: 100%;
-         top: -125%;
-         left: 0;
-         z-index: 3;
-         flex-direction: column;
-         background: $gray;
-         padding-top: 85px;
-         transition: all .3s ease;
+         top: 0;
+         left: -110%;
+         background-color: #c2c2c2;
+         padding: 100px 15px 20px 15px;
+         transition: left .3s;
+         overflow: auto;
+         z-index: 1;
+      }
 
-         &.active {
+      .menu__list {
+         flex-direction: column;
+         gap: 35px;
+      }
+      .menu__link {
+         font-size: 30px;
+      }
+
+      .icon-menu {
+         display: block;
+         position: relative;
+         z-index: 5;
+         width: 30px;
+         height: 18px;
+         background: transparent;
+
+         .icon-menu__line,
+         &::before,
+         &::after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            height: 2px;
+            width: 100%;
+            left: 0;
+            transition: all .3s;
+         }
+
+         .icon-menu__line {
+            top: calc(50% - 1px);
+         }
+         &::before {
             top: 0;
          }
+         &::after {
+            bottom: 0;
+         }
       }
-      .logo {
-         z-index: 4;
+   }
+
+   // .menu__list
+   &__list {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+      row-gap: 5px;
+      flex-wrap: wrap;
+   }
+
+   // .menu__item
+   &__item {
+   }
+
+   // .menu__link
+   &__link {
+      font-size: 18px;
+      &:hover {
+         text-decoration: underline;
       }
+   }
+
+   // .menu__icon
+   &__icon {
+      display: none;
+   }
+}
+
+@media (max-width: $breakpoint768) {
+   .menu-open .icon-menu::before {
+      top: calc(50% - 1px);
+      transform: rotate(-45deg);
+   }
+   .menu-open .icon-menu::after {
+      bottom: calc(50% - 1px);
+      transform: rotate(45deg);
+   }
+   .menu-open .icon-menu {
+      .icon-menu__line{
+         left: 50%;
+         width: 0px;
+      }
+   }
+   .menu-open {
+      .menu__body {
+         left: 0;
+      }
+   }
+}
+
+.menu-open body{
+   overflow: hidden;
+}
+
+.icon-menu {
+   display: none;
+
+   // .icon-menu__line
+   &__line {
+   }
+}
+
+
+// -------------------------------------
+
+.page {
+   padding-top: 100px;
+   padding-bottom: 50px;
+
+   // .page__container
+   &__container {
+      line-height: 1.5;
+      display: grid;
+      gap: 15px;
+   }
+
+   // .page__title
+   &__title {
+      font-weight: 700;
+      color: rgb(255, 60, 0);
    }
 }
