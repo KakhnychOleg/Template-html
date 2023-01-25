@@ -19,10 +19,11 @@ $(document).ready(function() {
     slidesToScroll: 1
   });
 
-  // Accordion
+  // Accordion one
   $('.accordion__title').click(function(event) {
     if($('.accordion').hasClass('one')){
       $('.accordion__title').not($(this)).removeClass('active');
+      $('.accordion__title-second').not($(this)).removeClass('active');
       $('.accordion__text').not($(this).next()).slideUp(300);
     }
     $(this).toggleClass('active').next().slideToggle(300)

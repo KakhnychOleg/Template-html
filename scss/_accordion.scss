@@ -1,11 +1,12 @@
-.accord__item {
-   display: flex;
-   align-items: flex-start;
-   justify-content: space-between;
-   margin: 80px 0;
-}
+// .accord__item {
+//    display: flex;
+//    align-items: flex-start;
+//    justify-content: space-between;
+//    margin: 80px 0;
+// }
 
-.accordion {
+.accordion,
+.accordion-second {
    width: 100%;
 
    &__item {
@@ -29,7 +30,8 @@
       margin-right: 72px;
    }
    
-   &__title {
+   &__title,
+   &__title-second {
       font-weight: 600;
       font-size: 24px;
       line-height: 34px;
@@ -98,6 +100,7 @@
       right: 18px;
    }
 }
+
 
 .active {
    color: #B09355;
