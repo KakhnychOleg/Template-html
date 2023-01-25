@@ -129,13 +129,14 @@ document.addEventListener('keydown', function (e) {
       popupClose(popupActive);
    }
 });
-// -------------------------------------------------------
+// --------------------------------------------------------------------------
 
 // Form 
 document.addEventListener('DOMContentLoaded', function () {
    const form = document.getElementById('form');
    form.addEventListener('submit', formSend);
 
+   // Инициализация отправки
    async function formSend(e) {
       e.preventDefault();
 
@@ -165,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
+   // Функция валидации
    function formValidate(form) {
       let error = 0;
       let formReq = document.querySelectorAll('._req');
@@ -205,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
    const formImage = document.getElementById('formImage');
-
    const formPreview = document.getElementById('formPreview');
 
    formImage.addEventListener('change', () => {
@@ -225,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
          return;
       }
 
+      // Добавление превью картинки
       var reader = new FileReader();
       reader.onload = function (e) {
          formPreview.innerHTML = `<img src="${e.target.result}" alt="img">`;
@@ -235,3 +237,4 @@ document.addEventListener('DOMContentLoaded', function () {
       reader.readAsDataURL(file);
    }
 });
+// --------------------------------------------------------------------

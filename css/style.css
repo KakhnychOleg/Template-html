@@ -612,8 +612,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .block-footer {
   padding: 65px 0;
-  background: #FAF9FA;
+  background: #c2c2c2;
   color: #fff;
+  border-top: 1px solid #000;
 }
 @media (max-width: 767.98px) {
   .block-footer {
@@ -685,11 +686,11 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: #FAF9FA;
+  background: #2962EF;
   border-radius: 100%;
 }
 .footer__link:hover path {
-  fill: #2962EF;
+  fill: #c2c2c2;
   transition: 0.3s all ease;
 }
 
