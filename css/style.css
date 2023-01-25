@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -53,6 +54,22 @@ ul, ol, li {
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: 400;
+}
+
+._text-center {
+  text-align: center;
+}
+
+._title {
+  font-size: 40px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #2962EF;
+}
+
+._subtitle {
+  font-size: 20px;
+  color: #232427;
 }
 
 .accord__item {
@@ -243,6 +260,202 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+.form {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #888;
+}
+.form__body {
+  position: relative;
+}
+.form__body::after {
+  content: "Отправка...";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.form__body._sending .form__body::after {
+  visibility: visible;
+  opacity: 1;
+}
+.form__title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.form__item {
+  margin-bottom: 20px;
+}
+.form__label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+.form__input {
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+  border: 1px solid #c2c2c2;
+}
+.form__input:focus {
+  box-shadow: 0 0 15px #7a956b;
+}
+.form__input._error {
+  box-shadow: 0 0 15px red;
+}
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding: 20px;
+}
+.form__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  background-color: rgba(0, 146, 15, 0.9921568627);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.form__button:hover {
+  background-color: rgba(1, 72, 8, 0.9921568627);
+}
+.form__button:active {
+  top: 3px;
+}
+
+.options {
+  margin-top: 10px;
+}
+.options__item {
+  margin-bottom: 10px;
+}
+.options__input {
+  display: none;
+}
+.options__input:checked + .options__label::after {
+  transform: scale(1);
+}
+.options__label {
+  display: inline-flex;
+  line-height: 140%;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  cursor: pointer;
+}
+.options__label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  height: 24px;
+  background-color: #c2c2c2;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.options__label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #06fa1e;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+.select {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+.file__item {
+  position: relative;
+}
+.file__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+.file__button {
+  display: inline-flex;
+  min-height: 40px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #77608d;
+  padding: 0 20px;
+}
+.file__preview {
+  display: inline-block;
+  max-width: 100px;
+}
+.file__preview img {
+  max-width: 100%;
+}
+
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  transform: scale(1);
+}
+.checkbox._error .checkbox__label::before {
+  box-shadow: 0 0 15px red;
+}
+.checkbox__label {
+  font-size: 16px;
+  line-height: 140%;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox__label::before {
+  content: "";
+  flex: 0 0 24px;
+  align-self: flex-start;
+  height: 24px;
+  background-color: #888;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.checkbox__label::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  background-color: #06fa1e;
+  border-radius: 4px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
 [class*=header__container] {
   max-width: 1080px;
   margin: 0 auto;
@@ -398,7 +611,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .block-footer {
   padding: 65px 0;
-  background: #232427;
+  background: #FAF9FA;
   color: #fff;
 }
 @media (max-width: 767.98px) {
@@ -471,7 +684,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: #5E5C6C;
+  background: #FAF9FA;
   border-radius: 100%;
 }
 .footer__link:hover path {
