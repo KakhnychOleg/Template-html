@@ -1,5 +1,5 @@
 .form {
-   max-width: 550px;
+   // max-width: 550px;
    margin: 0 auto;
    color: #888;
 
@@ -52,7 +52,6 @@
    // .form__input
    &__input {
       height: 50px;
-      padding: 0 20px;
       border-radius: 5px;
       width: 100%;
       font-size: 18px;
@@ -71,6 +70,7 @@
       min-height: 120px;
       resize: vertical;
       padding: 20px;
+      box-sizing: border-box;
    }
 
    // .form__button
@@ -152,6 +152,7 @@
    border-radius: 5px;
    font-size: 18px;
    padding: 0 20px;
+   border: 1px solid #c2c2c2;
 }
 .file {
 
@@ -212,6 +213,7 @@
 
    // .checkbox__label
    &__label {
+      width: 100%;
       font-size: 16px;
       line-height: 140%;
       display: inline-flex;
