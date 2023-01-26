@@ -131,6 +131,16 @@ document.addEventListener('keydown', function (e) {
 });
 // --------------------------------------------------------------------------
 
+// Tabs
+// document.addEventListener("click", function (e) {
+//    const tabsPreview = document.querySelectorAll('tabs__item');
+
+//    if (tabsPreview ) {
+      
+//       tabsPreview.classList.add('t-open');
+//    }
+// });
+
 // Form 
 document.addEventListener('DOMContentLoaded', function () {
    const form = document.getElementById('form');

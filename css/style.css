@@ -72,33 +72,31 @@ h1, h2, h3, h4, h5, h6 {
   color: #232427;
 }
 
-.accord__item {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin: 80px 0;
-}
-
-.accordion {
+.accordion,
+.accordion-second {
   width: 100%;
 }
-.accordion__item {
+.accordion__item,
+.accordion-second__item {
   margin-bottom: 12px;
   border: 1px solid #606060;
   border-radius: 15px;
   transition: all 0.3s ease-in;
 }
-.accordion__item:hover .accordion__title {
+.accordion__item:hover .accordion__title,
+.accordion-second__item:hover .accordion__title {
   color: gray;
 }
-.accordion__num {
+.accordion__num,
+.accordion-second__num {
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 34px;
   color: #000;
   margin-right: 72px;
 }
-.accordion__title {
+.accordion__title,
+.accordion-second__title {
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
@@ -109,7 +107,9 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.accordion__title::after, .accordion__title::before {
+.accordion__title::after, .accordion__title::before,
+.accordion-second__title::after,
+.accordion-second__title::before {
   content: " ";
   width: 14px;
   height: 1px;
@@ -118,15 +118,18 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   transition: all 0.3s ease;
 }
-.accordion__title::before {
+.accordion__title::before,
+.accordion-second__title::before {
   transform: rotate(45deg);
   right: 28px;
 }
-.accordion__title::after {
+.accordion__title::after,
+.accordion-second__title::after {
   transform: rotate(-45deg);
   right: 18px;
 }
-.accordion__text {
+.accordion__text,
+.accordion-second__text {
   display: none;
   padding: 16px 19px 16px 100px;
   background: transparent;
@@ -135,25 +138,81 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 26px;
   color: #000;
 }
-.accordion__text .accordion__text p {
+.accordion__text .accordion__text p,
+.accordion-second__text .accordion__text p {
   margin-bottom: 18px;
 }
-.accordion .accordion__title.active {
-  background: transparent;
+.accordion__title-second,
+.accordion-second__title-second {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  display: flex;
+  color: #000;
+  padding: 20px 40px 20px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-.accordion .accordion__title.active::before {
-  transform: rotate(-45deg);
-  right: 28px;
+.accordion__title-second::after, .accordion__title-second::before,
+.accordion-second__title-second::after,
+.accordion-second__title-second::before {
+  content: " ";
+  width: 14px;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  transition: all 0.3s ease;
 }
-.accordion .accordion__title.active::after {
-  transform: rotate(45deg);
+.accordion__title-second::before,
+.accordion-second__title-second::before {
+  transform: rotate(90deg);
   right: 18px;
 }
-.accordion .accordion__title.active::before,
-.accordion .accordion__title.active::after {
+.accordion__title-second::after,
+.accordion-second__title-second::after {
+  transform: rotate(180deg);
+  right: 18px;
+}
+.accordion__text-second,
+.accordion-second__text-second {
+  display: none;
+  padding: 16px 19px;
+  background: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000;
+}
+.accordion__text-second .accordion__text p,
+.accordion-second__text-second .accordion__text p {
+  margin-bottom: 18px;
+}
+.accordion .accordion__title-second.active,
+.accordion-second .accordion__title-second.active {
+  background: transparent;
+}
+.accordion .accordion__title-second.active::before,
+.accordion .accordion__title-second.active::before,
+.accordion-second .accordion__title-second.active::before,
+.accordion-second .accordion__title-second.active::before {
+  transform: rotate(180deg);
+  right: 18px;
+}
+.accordion .accordion__title-second.active::after,
+.accordion-second .accordion__title-second.active::after {
+  transform: rotate(180deg);
+  right: 18px;
+}
+.accordion .accordion__title-second.active::before,
+.accordion .accordion__title-second.active::after,
+.accordion-second .accordion__title-second.active::before,
+.accordion-second .accordion__title-second.active::after {
   background: #000;
 }
-.accordion .accordion__title::after {
+.accordion .accordion__title-second::after,
+.accordion-second .accordion__title-second::after {
   right: 18px;
 }
 
@@ -179,9 +238,15 @@ h1, h2, h3, h4, h5, h6 {
   .accordion__title {
     padding: 30px 40px 30px 0;
   }
+  .accordion__title-second {
+    padding: 30px 40px 30px 0;
+  }
 }
 @media screen and (max-width: 480px) {
   .accordion__title {
+    font-size: 1rem;
+  }
+  .accordion__title-second {
     font-size: 1rem;
   }
 }
@@ -457,6 +522,73 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s;
 }
 
+.tabs {
+  margin-bottom: 50px;
+}
+.tabs__items {
+  display: flex;
+}
+.tabs__item {
+  flex: 0 1 33.33%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #000;
+}
+.tabs__item span {
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 767.98px) {
+  .tabs .tabs__item span {
+    display: block;
+    width: 100px;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+  }
+}
+.tabs__block {
+  display: none;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  position: relative;
+}
+.tabs__block::before {
+  content: "";
+  height: 50px;
+  width: 33.33%;
+  position: absolute;
+  top: -50px;
+}
+.tabs__block.t-open {
+  display: block;
+}
+.tabs__block:nth-child(1), .tabs__block:nth-child(1)::before {
+  background-color: #eb8698;
+}
+.tabs__block:nth-child(1)::before {
+  left: 0;
+}
+.tabs__block:nth-child(2), .tabs__block:nth-child(2)::before {
+  background-color: #9278aa;
+}
+.tabs__block:nth-child(2)::before {
+  left: 33.33%;
+}
+.tabs__block:nth-child(3), .tabs__block:nth-child(3)::before {
+  background-color: #97c67d;
+}
+.tabs__block:nth-child(3)::before {
+  right: 0;
+}
+
 [class*=header__container] {
   max-width: 1080px;
   margin: 0 auto;
@@ -717,6 +849,23 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
 }
 
+/* .project__img {
+   position: relative;
+   overflow: hidden;
+   padding-bottom: 100%;
+}
+.project__img img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+   transition: all .8s;
+}
+.project__img:hover img {
+   transform: scale(1.05);
+} */
 .container {
   max-width: 1080px;
   margin: 0 auto;
