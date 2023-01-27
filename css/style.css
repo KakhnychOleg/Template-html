@@ -356,6 +356,18 @@ h1, h2, h3, h4, h5, h6 {
 .form__item {
   margin-bottom: 20px;
 }
+.form .form-block-input {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 479.98px) {
+  .form .form-block-input {
+    flex-wrap: wrap;
+  }
+}
+.form__item-two {
+  flex: 1 1 50%;
+}
 .form__label {
   font-size: 18px;
   display: block;
@@ -366,10 +378,16 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
   width: 100%;
   font-size: 18px;
+  padding: 0 20px;
+  box-sizing: border-box;
   border: 1px solid #c2c2c2;
+  transition: border 0.3s;
 }
 .form__input:focus {
-  box-shadow: 0 0 15px #7a956b;
+  box-shadow: 0 0 15px #c2c2c2;
+}
+.form__input:hover {
+  border: 1px solid rgba(0, 146, 15, 0.9921568627);
 }
 .form__input._error {
   box-shadow: 0 0 15px red;
@@ -379,6 +397,9 @@ h1, h2, h3, h4, h5, h6 {
   resize: vertical;
   padding: 20px;
   box-sizing: border-box;
+}
+.form textarea:hover {
+  border-color: 1px solid rgba(0, 146, 15, 0.9921568627);
 }
 .form__button {
   width: 100%;
@@ -646,7 +667,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     top: 0;
     left: -110%;
-    background-color: #c2c2c2;
+    background-color: rgba(194, 194, 194, 0.95);
     padding: 100px 15px 20px 0px;
     transition: left 0.3s;
     overflow: auto;
@@ -657,7 +678,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 35px;
   }
   .menu .menu__link {
-    font-size: 30px;
+    font-size: 20px;
   }
   .menu .icon-menu {
     display: block;
@@ -694,11 +715,23 @@ h1, h2, h3, h4, h5, h6 {
   row-gap: 5px;
   flex-wrap: wrap;
 }
+.menu__item:last-child {
+  background: #1046ce;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: #fff;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.menu__item:last-child:hover {
+  color: aqua;
+}
 .menu__link {
   font-size: 18px;
+  transition: color 0.3s;
 }
 .menu__link:hover {
-  text-decoration: underline;
+  color: aqua;
 }
 .menu__icon {
   display: none;

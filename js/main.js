@@ -132,14 +132,23 @@ document.addEventListener('keydown', function (e) {
 // --------------------------------------------------------------------------
 
 // Tabs
-// document.addEventListener("click", function (e) {
-//    const tabsPreview = document.querySelectorAll('tabs__item');
-
-//    if (tabsPreview ) {
-      
-//       tabsPreview.classList.add('t-open');
-//    }
-// });
+document.querySelectorAll(".tabs__items .tabs__item").forEach(function (tab, index) {
+   tab.addEventListener("click", function () {
+     const filters = document.querySelectorAll(".tabs__items .tabs__item");
+     const tabs = document.querySelectorAll(".tabs__body .tabs__block");
+ 
+     filters.forEach(function (tab) {
+       tab.classList.remove("t-open");
+     });
+     this.classList.add("t-open");
+ 
+     tabs.forEach(function (tabContent) {
+       tabContent.classList.remove("t-open");
+     });
+     tabs[index].classList.add("t-open");
+   });
+ });
+//  ---------------------------------------------------------------------------
 
 // Form 
 document.addEventListener('DOMContentLoaded', function () {

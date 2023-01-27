@@ -69,7 +69,7 @@
          height: 100%;
          top: 0;
          left: -110%;
-         background-color: #c2c2c2;
+         background-color: rgba(194, 194, 194, 0.95);
          padding: 100px 15px 20px 0px;
          transition: left .3s;
          overflow: auto;
@@ -81,7 +81,7 @@
          gap: 35px;
       }
       .menu__link {
-         font-size: 30px;
+         font-size: 20px;
       }
 
       .icon-menu {
@@ -127,14 +127,29 @@
 
    // .menu__item
    &__item {
+      &:last-child {
+         background: $blueDark;
+         border-radius: 15px;
+         padding: 10px 20px;
+         color: #fff;
+         transition: color .3s;
+         cursor: pointer;
+
+         &:hover {
+            color: aqua;
+         }
+      }
    }
 
    // .menu__link
    &__link {
       font-size: 18px;
+      transition: color .3s;
+
       &:hover {
-         text-decoration: underline;
+         color: aqua;
       }
+
    }
 
    // .menu__icon
