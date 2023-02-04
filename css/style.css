@@ -72,6 +72,20 @@ h1, h2, h3, h4, h5, h6 {
   color: #232427;
 }
 
+._button {
+  background: transparent;
+  border: 1px solid yellow;
+  border-radius: 15px;
+  text-transform: uppercase;
+  color: yellow;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in;
+}
+._button:hover {
+  background: yellow;
+  color: #000;
+}
+
 .accordion,
 .accordion-second {
   width: 100%;
@@ -390,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(0, 146, 15, 0.9921568627);
 }
 .form__input._error {
-  box-shadow: 0 0 15px red;
+  border: 1px solid red;
 }
 .form textarea {
   min-height: 120px;
@@ -618,8 +632,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  position: fixed;
-  top: 0;
+  position: absolute;
   left: 0;
   width: 100%;
   z-index: 50;
@@ -762,7 +775,6 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 .page {
-  padding-top: 100px;
   padding-bottom: 50px;
 }
 .page__container {
@@ -882,6 +894,34 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
 }
 
+.block-img-text {
+  background: url(https://upload.wikimedia.org/wikipedia/ru/1/1d/%D0%91%D0%B5%D0%B7%D0%BC%D1%8F%D1%82%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C.png) no-repeat center/cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  -webkit-animation: text-img 7s linear infinite alternate;
+          animation: text-img 7s linear infinite alternate;
+}
+
+@-webkit-keyframes text-img {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
+@keyframes text-img {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
 /* .project__img {
    position: relative;
    overflow: hidden;
@@ -899,12 +939,19 @@ h1, h2, h3, h4, h5, h6 {
 .project__img:hover img {
    transform: scale(1.05);
 } */
+.hero {
+  padding-top: 70px;
+  background: url("../img/slide1.png") center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
   font-family: "Roboto", sans-serif;
-  min-height: 100%;
   overflow: clip;
 }
 

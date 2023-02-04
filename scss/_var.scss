@@ -8,6 +8,7 @@ $breakpoint480: 479.98 + px;
 // Colors
 $titleColor: #2962EF;
 $subtitleColor : #232427;
+$buttonColor : yellow;
 $primary: #FAF9FA;
 $secondary: #2962EF;
 $blueDark: #1046ce;
@@ -30,5 +31,21 @@ $inputHover: #00920ffd;
 ._subtitle {
    font-size: 20px;
    color: $subtitleColor;
+}
+
+// Button
+._button {
+   background: transparent;
+   border: 1px solid $buttonColor;
+   border-radius: 15px;
+   text-transform: uppercase;
+   color: $buttonColor;
+   padding: 10px 20px;
+   transition: all .3s ease-in;
+
+   &:hover {
+      background: $buttonColor;
+      color: #000;
+   }
 }
 
