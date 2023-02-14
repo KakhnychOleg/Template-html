@@ -1,6 +1,7 @@
 // Breakpoint & Container
 $containerWidth: 1080 + px;
 $breakpoint1200: 1199.98 + px;
+$breakpoint1024: 1023.98 + px;
 $breakpoint930: 929.98 + px;
 $breakpoint768: 767.98 + px;
 $breakpoint480: 479.98 + px;
@@ -22,30 +23,58 @@ $inputHover: #00920ffd;
 }
 
 ._title {
+   font-family: 'Raleway', sans-serif;
+   font-style: normal;
+   font-weight: 900;
    font-size: 40px;
-   line-height: 140%;
+   line-height: 44px;
    text-transform: uppercase;
    color: $titleColor;
 }
 
 ._subtitle {
-   font-size: 20px;
+   font-family: 'Raleway', sans-serif;   
+   font-style: normal;
+   font-weight: 300;
+   font-size: 40px;
+   line-height: 44px;
+   text-transform: uppercase;
    color: $subtitleColor;
 }
 
 // Button
 ._button {
-   background: transparent;
-   border: 1px solid $buttonColor;
-   border-radius: 15px;
+   font-family: 'Raleway', sans-serif;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 13px;
+   line-height: 13px;
    text-transform: uppercase;
-   color: $buttonColor;
-   padding: 10px 20px;
+
+   background: transparent;
+   border: 2px solid $buttonColor;
+   border-radius: 30px;
+   padding: 26px 58px;
+
    transition: all .3s ease-in;
 
    &:hover {
       background: $buttonColor;
-      color: #000;
    }
+}
+
+._button-center {
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+}
+._button-white {
+   color: #fff;
+}
+._button-dark {
+   color: #4F4A37;
+}
+._button-yellow {
+   color: #FCDB5A;
 }
 

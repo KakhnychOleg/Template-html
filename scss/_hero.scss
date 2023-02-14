@@ -1,7 +1,78 @@
 .hero {
-   padding-top: 70px;
-   background: url('../img/slide1.png') center ;
-   min-height: 500px;
+   padding: 130px 0 230px 0;
+   background: url('../img/slide1.png') center / cover no-repeat ;
+   // min-height: 712px;
    display: flex;
-   align-items: center;
+   text-align: left;
+   position: relative;
+   z-index: 2;
+   // align-items: center;
+
+   font-family: 'Raleway', sans-serif;
+
+   &__suptitle {
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 40px;
+      text-transform: uppercase;
+      color: $secondary;
+   
+      margin-bottom: 25px;
+   }
+
+   &__title {
+      font-weight: 900;
+      font-size: 75px;
+      line-height: 90px;
+      text-transform: uppercase;
+      color: $secondary;
+
+      margin-bottom: 25px;
+   }
+   
+   &__subtitle {
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      color: $secondary;
+
+      max-width: 688px;
+      padding-bottom: 50px; 
+      margin: 0 auto;
+   }
+
+   &::before {
+      position: absolute;
+      content: ' ';
+      left: 0;
+      top: 0;
+      background: url('../img/hero-dots.png') center / cover no-repeat;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+   }
+
+   &::after {
+      position: absolute;
+      content: ' ';
+      left: 50%;
+      bottom: -52px;
+      background: url('../img/hero-line.png') no-repeat;
+      width: 15px;
+      height: 104px;
+      z-index: 2;
+   }
+
+   @media (max-width: $breakpoint768) {
+      .hero__title {
+         text-align: center;
+         font-size: 60px;
+      }
+      .hero__suptitle {
+         font-size: 30px;
+         text-align: center;
+      }
+   }
 }
