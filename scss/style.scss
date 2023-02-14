@@ -22,10 +22,11 @@
    margin: 0 auto;
    padding: 0 20px;
 
-   font-family: 'Roboto', sans-serif;
+   font-family: 'Open Sans', sans-serif;
 
    // min-height: 100%;
    overflow: clip;
+   z-index: 2;
 }
 
 body.lock {
